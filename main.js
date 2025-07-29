@@ -56,10 +56,7 @@ document.querySelector(".activityForm").addEventListener("submit", (e) => {
   e.preventDefault();
   const activityNumber = e.target["activityNumber"].value;
   const getRegisterDay = workdays * activityNumber;
-  const restTime = Math.round(
-    (getRegisterDay - Math.trunc(getRegisterDay)).toFixed(1) * 8
-  );
-
+  const restTime = (getRegisterDay - Math.trunc(getRegisterDay)).toFixed(1) * 8;
   document.querySelector(".result").innerHTML = ` ${Math.trunc(
     getRegisterDay
   )}일 ${restTime}시간`;
